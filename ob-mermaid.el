@@ -44,6 +44,7 @@
 (defun org-babel-execute:mermaid (body params)
   (let* ((out-file (or (cdr (assoc :file params))
                        (error "mermaid requires a \":file\" header argument")))
+   (fit (cdr (assoc :fit params)))
 	 (theme (cdr (assoc :theme params)))
 	 (width (cdr (assoc :width params)))
 	 (height (cdr (assoc :height params)))
